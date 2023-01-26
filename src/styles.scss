@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+  box-sizing: border-box;
+  color: white;
+  margin: 0px;
+}
+
+button {
+  background-color: #fd896b;
+  color: white;
+  width: 130px;
+  border-radius: 20px !important;
+}

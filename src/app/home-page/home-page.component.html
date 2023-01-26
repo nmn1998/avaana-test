@@ -1,0 +1,113 @@
+<div class="main">
+    <header class="header">
+        <div class="logoContainer">
+            <img style="margin-right: 10px;" src="https://avaana.com.au/assets/params/images/svg/footer/avaana-logo.svg"
+                alt="logo" width="100" height="100">
+        </div>
+        <div (click)="headerFlip()" class="heading-btn">
+            <mat-icon>list</mat-icon>
+        </div>
+        <div class="header-content">
+            <span class="heading-space">Health and Wellbeing Appointment</span>
+            <span class="heading-space">Fitness Classes</span>
+        </div>
+        <div class="profile">
+            <mat-icon class="header-icon">search</mat-icon>
+            <mat-icon class="header-icon">account_circle</mat-icon>
+            <button mat-raised-button>List with us</button>
+        </div>
+        <div class="menuWrapper" *ngIf="activeBtn">
+            <div class="mobileList">Health and Wellbeing Appointments</div>
+            <div class="mobileList">Fitness Classes</div>
+            <div style="display: flex;
+            justify-content: center;
+            margin-top: 100px;">
+                <button mat-raised-button>List with us</button>
+            </div>
+        </div>
+    </header>
+    <article style="position: relative;">
+        <div>
+            <img class="articleImg" src="assets/img/Group 44.png" alt="homeImage">
+        </div>
+        <div class="articleHeading">
+            <span class="imageContent">Seeking Wellbeing?</span><br>
+            <span class="imageContent">You're in the right place.</span>
+        </div>
+        <div class="articleTabs">
+            <div>
+                <span class="heading-space" (click)="activeLink('appointment')"
+                    [class.active]="active === 'appointment'">Appointments</span>
+                <span class="heading-space" (click)="activeLink('classes')"
+                    [class.active]="active === 'classes'">Classes</span>
+                <span class="heading-space" (click)="activeLink('online')"
+                    [class.active]="active === 'online'">Online</span>
+            </div>
+            <div class="searchBox">
+                <div class="innerSearchBox" style="width: 250px;">
+                    <mat-icon style="color: #095D59;">search</mat-icon>
+                    <input class="inputSearch" type="text" placeholder="Search for a service, provider or symptoms">
+                </div>
+                <div class="innerSearchBox" style="width: 130px;">
+                    <mat-icon style="color: #095D59;">room</mat-icon>
+                    <input class="inputSearch" type="text" placeholder="Select a location">
+                </div>
+                <div class="innerSearchBox" style="width: 165px;">
+                    <mat-icon style="color: #095D59;">calendar_today</mat-icon>
+                    <input class="inputSearch" type="text" placeholder="When do you want to go?">
+                </div>
+                <div>
+                    <button mat-raised-button>Discover</button>
+                </div>
+            </div>
+        </div>
+
+    </article>
+    <section style="display: flex; justify-content: center;" *ngIf="!activeBtn">
+        <div class="section">
+            <div class="sectionHeading">
+                Discover wellbeing services near you
+            </div>
+            <div class="innerHeading">
+                Displaying nearby wellbeing for <span class="highlight"> Hawthron</span><mat-icon
+                    style="position: relative; top: 7px; color: #00BD71;">expand_more</mat-icon>
+            </div>
+            <div class="cardSection">
+                <div class="cardHolder">
+                    <div class="cardSlider" *ngFor="let item of arr">
+                        <div class="cardHeader">
+                            <img src="assets/img/img1.png">
+                            <div style="display: flex; flex-direction: column;">
+                                <span>Sunbear Shatsu</span>
+                                <span>
+                                    Hawthron
+                                </span>
+                                <span style="font-size: 12px;">4.8 ⭐⭐⭐⭐⭐</span>
+                            </div>
+                            <mat-icon style="color: #FD896B;">favorite_border</mat-icon>
+                        </div>
+                        <div class="cardContainer">
+                            <span>Naturopathic Consultation</span>
+                            <span>$ 50/ hour</span>
+                        </div>
+                        <div class="cardFooter">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="font-weight: 100;">Today, June 28</span>
+                                <span style="color: #00BD71;">Show all times</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-top: 17px;">
+                                <button id="serviceButton">11:00 AM</button>
+                                <button id="serviceButton"> 11.15 AM</button>
+                                <button id="serviceButton">+29 more</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <button mat-raised-button style="width: auto;font-weight: 600;">FIND MORE WELLBEING NEARBY</button>
+            </div>
+        </div>
+    </section>
+</div>
